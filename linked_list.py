@@ -32,8 +32,8 @@ list.traverse()       // displaying output
 //10 20 30 
 
 
-//inserting node to linkedlist
-//write function inside linkedlist class
+// inserting node to linkedlist
+// write function inside linkedlist class
 
 def insertbeg(self, data):
   newnode = node(data)
@@ -71,8 +71,8 @@ def insert_with_key(self, data, key):
   
   
   
-//deleting node in linkedlist
-//write functions inside linkedlist class
+// deleting node in linkedlist
+// write functions inside linkedlist class
 
 def delete_beg(self):
   temp = self.head
@@ -87,7 +87,7 @@ def delete_end(self):
   
 // finding mid node
 // 2 methods old skl one find no.of nodes and div it by 2 and find mid node
-//with traverse find no.of node
+// with traverse find no.of node
 // rewrite insert_with_key to find the node
 
 // rabbit and turtle methode i named it.
@@ -100,6 +100,23 @@ def find_mid(self):
     turtle = turtle.next
     rabbit = rabbit.next.next
   print(turtle.data)
+  
+  
+// reversing linkedlist using 2 pointer methode
+// simple logic but little bit confusing
+
+def reverse(self):
+  prev = None
+  current = self.head
+  while(current):
+    nextnode = current.next
+    current.next = prev
+    prev = current
+    current = nextnode
+  // now all linkes are reversed prev is new head in last node
+  while(prev):
+    print(prev.data)
+    prev = prev.next
   
   
   
