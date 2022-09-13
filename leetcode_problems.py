@@ -79,3 +79,36 @@ class Solution:
                 if(two!=[]):
                     two.pop(-1)
         return one==two
+    
+    
+    
+# 20 valid parentheses
+# read the questions properly!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+"""  test case 
+(()) flase
+(){}[] true
+([) flase
+))(( flase """
+
+# ik not a optimal sol, but i tried on my own =)
+
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        flag = 1
+        for i in s:
+            if i=="(" or i=="[" or i=="{":
+                stack.append(i)
+            elif(len(stack)!=0):
+                if (i==")" and stack[-1]=="(") or (i=="]" and stack[-1]=="[") or (i=="}" and stack[-1]=="{"):
+                    stack.pop()
+                else:
+                    flag = 0
+            else:
+                flag = 0
+        if(len(stack)==0 and flag==1):
+            return True
+        else:
+            return False
+
+
