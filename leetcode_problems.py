@@ -110,5 +110,32 @@ class Solution:
             return True
         else:
             return False
+        
+        
+        
+# 953. Verifying an Alien Dictionary
+# solved with help of solution
 
+
+def alien(a,word):
+    hashmap = {}
+    for i in range(len(a)):
+        hashmap.update({a[i]:i})
+        #hashmap[a[i]] = i
+    for i in range(len(word)-1):
+        for j in range(len(word[i])):
+            #print(i,j)
+            if j >= len(word[i+1]):
+                return False
+            if word[i][j] != word[i+1][j]:
+                # print(hashmap[word[i][j]], hashmap[word[i+1][j]])
+                if(hashmap[word[i][j]] > hashmap[word[i+1][j]]):
+                    return False
+                else:
+                    break;
+    return True
+
+a = "hlabcdefgijkmnopqrstuvwxyz"
+word = ["hello","leetcode"]
+print(alien(a,word))
 
