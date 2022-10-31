@@ -139,3 +139,20 @@ a = "hlabcdefgijkmnopqrstuvwxyz"
 word = ["hello","leetcode"]
 print(alien(a,word))
 
+
+
+
+# valid Anagram
+
+def anagram(s,t):
+    ss = {}
+    tt = {}
+    for i in s:
+        ss[i] = s.count(i)
+    for i in t:
+        tt[i] = t.count(i)
+    return ss == tt
+    
+
+
+
