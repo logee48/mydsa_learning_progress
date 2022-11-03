@@ -152,7 +152,47 @@ def anagram(s,t):
     for i in t:
         tt[i] = t.count(i)
     return ss == tt
-    
 
+
+# 70 climbing stairs
+# it is trickyy question, u can only climb 1 or 2 step at a time
+# nothing special just fibanociii
+"""
+test case: 
+n = 2
+1,1
+2
+answer = 2
+
+n = 1
+1
+answer = 1
+
+n = 3
+1,1,1
+2,1
+1,2
+answer = 3
+
+n = 4
+1,1,1,1
+2,1,1
+1,2,1
+1,1,2
+2,2
+answer = 5
+"""
+    
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        if n==1:return 1
+        else:
+            a = 1
+            b = 2
+            for i in range(n-2):
+                c = a
+                a = b
+                b = c+b
+            return b
 
 
