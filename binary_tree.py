@@ -38,12 +38,12 @@ def postorder(root):
 #left part of node have lower val
 #right part of node have greater val
 def inserting_node(root, data):
-    if root:
-        if data > root.val:
+    if root: #checking if root not is empty or not
+        if data > root.val:  #if data is greate than root.val, it is added to right subtree
             if root.right:
                 inserting_node(root.right, data)
             else:
-                root.right = node(data)
+                root.right = node(data)   # ******remember to use node(data) not just data*******,we should add left ,right property to all nodes
         elif data < root.val:
             if root.left:
                 inserting_node(root.left, data)
