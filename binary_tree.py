@@ -35,6 +35,8 @@ def postorder(root):
     print(root.val, end=" ")
 
 
+#binary tree can be in anyorder,but bst left subtree contains lower val and right subtree conatins greater val
+#binary search tree(bst)
 #left part of node have lower val
 #right part of node have greater val
 def inserting_node(root, data):
@@ -52,11 +54,44 @@ def inserting_node(root, data):
     else:
         root = node(data)
 
+
+
+def searching_node(root, data):
+    # if root:
+    #     if data > root.val:
+    #         if root.right is None:
+    #             print("notfound")
+    #         elif root.right.val == data:
+    #             print("found")
+    #         searching_node(root.right, data)
+    #     elif data < root.val:
+    #         if root.left is None:
+    #             print("notfound")
+    #         elif root.left.val == data:
+    #             print("found")
+    #         searching_node(root.left, data)
+
+    if data > root.val:
+        if root.right:
+            searching_node(root.right, data)
+        else:
+            print("notfound")
+    elif data < root.val:
+        if root.left:
+            searching_node(root.left, data)
+        else:
+            print("notfound")
+    else:
+        print("found")
+        
+
+
+
 root = node(20)
 
 #we can manually data values in tree
-root.left = node(100)
-root.right = node(19)
+# root.left = node(100)
+# root.right = node(19)
 
 inserting_node(root, 90)
 inserting_node(root, 100)
@@ -64,8 +99,10 @@ inserting_node(root, 120)
 inserting_node(root, 12)
 inserting_node(root, 4)
 
-inorder(root)
-print("\n")
-preorder(root)
-print("\n")
-postorder(root)
+# inorder(root)
+# print("\n")
+# preorder(root)
+# print("\n")
+# postorder(root)
+
+searching_node(root, 104)
