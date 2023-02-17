@@ -1,4 +1,6 @@
-matrix = [[1,2,3],[4,5,6],[7,8,9]]
+matrix = [[1, 2, 3, 4 ],[ 5, 6, 7, 8 ],
+              [ 9, 10, 11, 12 ],
+              [ 13, 14, 15, 16 ]]
 
 # matrix traversal
 # it can be done by 2 for loops
@@ -51,3 +53,27 @@ def sort_matrix(matrix):
             a+=1
     return matrix
 
+# print(matrix[::-1])
+# for i in range(5):
+#     for j in range(5):
+#         print(i,j)
+
+
+
+## rotating matrix 180 degree
+## first transpose then reversing it
+def transpose(matrix):
+    for i in range(len(matrix)):
+        for j in range(i,len(matrix)):
+            temp = matrix[i][j]
+            matrix[i][j] = matrix[j][i]
+            matrix[j][i] = temp
+    return matrix
+def rev(matrix):
+    a = matrix[::-1]
+    return a
+one1 = transpose(matrix)
+rev1 = rev(one1)
+one2 = transpose(rev1)
+rev2 = rev(one2)
+print(matrix)
