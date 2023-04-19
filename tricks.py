@@ -12,3 +12,8 @@ output:
 [[2, 8], [7, 12], [10, 16], [999, 6]]
 [[999, 6], [2, 8], [7, 12], [10, 16]]
 """
+
+
+## get multi int input in single line
+a,b = input().split()   #data-type will be in string
+a,b = map(int, input().split())  #it works fineee
